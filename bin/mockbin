@@ -22,8 +22,8 @@ cmd
   .parse(process.argv)
 
 app(cmd, function () {
-  if (cmd.apiEmbed != options.apiembed) {
-    console.info('API embed site over-ridden - now provided by: %s', cmd.apiEmbed)
+  if (cmd.apiEmbed && cmd.apiEmbed != options.apiembed) {
+    console.info('API embed site over-ridden - now provided by: [%s]', cmd.apiEmbed)
   }
   console.info('starting server on port: %d', cmd.port)
 })
