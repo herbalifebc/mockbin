@@ -10,4 +10,4 @@ RUN npm set progress=false && npm config set depth 0 && npm install
 COPY . .
 RUN npm config set mockbin:redis redis://redis:6379
 EXPOSE 8080
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "start", "--"]
