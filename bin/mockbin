@@ -10,7 +10,7 @@ var options = {
   port: process.env.MOCKBIN_PORT || process.env.npm_package_config_port,
   quiet: process.env.MOCKBIN_QUIET || process.env.npm_package_config_quiet,
   redis: process.env.MOCKBIN_REDIS || process.env.npm_package_config_redis,
-  apiembed: process.env.MOCKBIN_APIEMBED || process.env.npm_package_config_apiEmbed
+  apiEmbed: process.env.MOCKBIN_APIEMBED || process.env.npm_package_config_apiEmbed
 }
 
 cmd
@@ -22,7 +22,7 @@ cmd
   .parse(process.argv)
 
 app(cmd, function () {
-  if (cmd.apiEmbed && cmd.apiEmbed != options.apiembed) {
+  if (cmd.apiEmbed != options.apiEmbed) {
     console.info('API embed site over-ridden - now provided by: [%s]', cmd.apiEmbed)
   }
   console.info('starting server on port: %d', cmd.port)
