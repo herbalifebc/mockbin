@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mockbin:
+    image: bryanc/mockbin
+    ports:
+      - 4000:8080
+    links:
+      - redis
+    command: -a dtr.dev.myhrbl.com:4001
+      
+  redis:
+    image: redis
+    volumes:
+      - /docker/redis:/data
+      
